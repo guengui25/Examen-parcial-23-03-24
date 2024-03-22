@@ -1,6 +1,7 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent } from "preact";
-import AgendaList from "./AgendaList.tsx"
+
+import {AgendaList} from "../components/AgendaList.tsx"
 
 import {Contact} from "../types.ts"
 
@@ -30,9 +31,6 @@ const AgendaForm: FunctionComponent =  () => {
         if(CheckMail(email)){
             contacs_aux.push({name,email})
             setContacts(contacs_aux);
-
-            console.log(contacts)
-
         }else{
             setError("Invalid contact. A field is empty, email is invalid, or the email is already in use.")
         }
@@ -41,7 +39,7 @@ const AgendaForm: FunctionComponent =  () => {
 
     return(
         <>
-            {contacts.length > 0 && <AgendaList docs={contacts}/>}
+            {contacts.length > 0 && <AgendaList docs={contacts}/> }
             
             <div class="agendaForm">
                 <h2>Add new contact</h2>

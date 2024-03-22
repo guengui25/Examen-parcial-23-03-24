@@ -9,7 +9,6 @@ import * as $agendacsr from "./routes/agendacsr.tsx";
 import * as $agendassr from "./routes/agendassr.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $AgendaForm from "./islands/AgendaForm.tsx";
-import * as $AgendaList from "./islands/AgendaList.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -23,7 +22,6 @@ const manifest = {
   },
   islands: {
     "./islands/AgendaForm.tsx": $AgendaForm,
-    "./islands/AgendaList.tsx": $AgendaList,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
