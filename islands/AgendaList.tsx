@@ -1,16 +1,17 @@
 import { FunctionComponent } from "preact";
 
 import {Contact} from "../types.ts"
+import { useState } from "preact/hooks";
 
 const AgendaList: FunctionComponent<{docs:Contact[]}> = (props) => {
 
-    const Contacts = props.docs;
+    const [contacts,setContacts] = useState<Contact[]>(props.docs);
 
     return(
         <div class="agendaList">
             <h2>Contactos</h2>
             <ul>
-                {Contacts.map((Contact)=>(
+                {contacts.map((Contact)=>(
                     <li key ={Contact.email} >
                         <span>{Contact.name}</span>
                         <span>{Contact.email}</span>
@@ -19,7 +20,7 @@ const AgendaList: FunctionComponent<{docs:Contact[]}> = (props) => {
                 }
             </ul>
         </div>
-    )  
+    )
 }
 
 export default AgendaList;
